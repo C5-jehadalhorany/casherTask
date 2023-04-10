@@ -8,7 +8,7 @@ const register = async (req, res) => {
 
     const encryptedPassword = await bcrypt.hash(password, salt);
 
-    const query = `INSERT INTO users (userName, email, password, role_id) VALUES(?,?,?,?)`;
+    const query = `INSERT INTO users (userName,email,password,role_id) VALUES(?,?,?,?);`;
     const data = [
         userName,
         email.toLowerCase(),
@@ -16,6 +16,8 @@ const register = async (req, res) => {
         role_id,
     ];
     connection.query(query, data, (err, result) => {
+        console.log(data);
+        console.log(result);
         if (err) {
 
             return res.status(409).json({

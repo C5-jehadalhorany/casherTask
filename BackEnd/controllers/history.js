@@ -2,7 +2,7 @@ const connection = require("../models/db");
 
 const createHistory = (req, res) => {
     const { solded, total } = req.body;
-    const query = `INSERT INTO products (solded,total) VALUE(?,?);`
+    const query = `INSERT INTO history (solded,total) VALUE(?,?);`
     const data = [solded, total];
     connection.query(query, data, (err, result) => {
         if (err) {
@@ -20,9 +20,8 @@ const createHistory = (req, res) => {
     });
 }
 
-
 const GetAllHistory = (req, res) => {
-    const query = `SELECTE * from products;`;
+    const query = `SELECTE * from history;`;
     connection.query(query, (err, result) => {
         if (err) {
             return res.status(500).json({

@@ -32,7 +32,7 @@ CREATE TABLE permissions(
 CREATE TABLE products (
     id INT AUTO_INCREMENT NOT NULL,
     productName VARCHAR(255),
-    price INT,
+    price FLOAT(24),
     is_deleted TINYINT DEFAULT 0,
     PRIMARY KEY (id)
 );
