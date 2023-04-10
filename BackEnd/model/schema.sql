@@ -47,3 +47,10 @@ CREATE TABLE roles_permissions(
     primary key (id)
 );
 
+CREATE TABLE history(
+    id int auto_increment NOT NULL,
+    solded varchar(255),
+    total varchar(255),
+    is_deleted TINYINT DEFAULT 0,
+    primary key (id)
+);
