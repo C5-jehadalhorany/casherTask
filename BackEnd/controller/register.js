@@ -1,23 +1,37 @@
-const connection = require("../model/db")
-require("../model/db");
+const connection = require("../models/db");
+const bcrypt = require("bcrypt");
+const salt = 10;
 
-const register = (req, res) => {
-    const { name, password } = req.body;
-    const query = `INSERT INTO register (name, password) VALUES(?,?);`
-    const data = [name, password];
+const register = async (req, res) => {
+    const { userName, email, password, role_id } =
+        req.body;
+
+    const encryptedPassword = await bcrypt.hash(password, salt);
+
+    const query = `INSERT INTO users (userName, email, password, role_id) VALUES(?,?,?,?)`;
+    const data = [
+        userName,
+        email.toLowerCase(),
+        encryptedPassword,
+        role_id,
+    ];
     connection.query(query, data, (err, result) => {
         if (err) {
-            console.log(err.message);
-            return res.status(404).json({
+
+            return res.status(409).json({
                 success: false,
-                message: "Error in database",
+                massage: "The email already exists",
+                err
             });
         }
         return res.status(200).json({
             success: true,
-            message: "Account Created Successfully",
-            result,
+            massage: "Account Created Successfully",
+            result
         });
     });
 };
-module.exports = { register };
+
+module.exports = {
+    register,
+};
