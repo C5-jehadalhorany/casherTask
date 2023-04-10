@@ -1,9 +1,9 @@
 const connection = require("../models/db");
 
-const createProduct = (req, res) => {
-    const { productName, price } = req.body;
-    const query = `INSERT INTO products (productName,price) VALUE(?,?);`
-    const data = [productName, price];
+const createHistory = (req, res) => {
+    const { solded, total } = req.body;
+    const query = `INSERT INTO products (solded,total) VALUE(?,?);`
+    const data = [solded, total];
     connection.query(query, data, (err, result) => {
         if (err) {
             return res.status(500).json({
@@ -14,14 +14,14 @@ const createProduct = (req, res) => {
         }
         return res.status(201).json({
             success: true,
-            massage: "Success product created",
+            massage: "Success history created",
             result: result,
         });
     });
 }
 
 
-const GetAllProduct = (req, res) => {
+const GetAllHistory = (req, res) => {
     const query = `SELECTE * from products;`;
     connection.query(query, (err, result) => {
         if (err) {
@@ -33,7 +33,7 @@ const GetAllProduct = (req, res) => {
         }
         return res.status(201).json({
             success: true,
-            massage: "Success ALL product",
+            massage: "Success ALL history",
             result: result,
         });
     })
@@ -41,6 +41,6 @@ const GetAllProduct = (req, res) => {
 
 
 module.exports = {
-    createProduct,
-    GetAllProduct
+    createHistory,
+    GetAllHistory
 };

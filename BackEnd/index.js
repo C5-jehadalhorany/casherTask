@@ -7,7 +7,7 @@ const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const roleRouter = require("./routes/roles");
 const productRouter = require("./routes/roles");
-
+const historyRouter = require("./routes/history");
 const permissionRouter = require("./routes/permission");
 
 
@@ -20,6 +20,7 @@ app.use("/login", loginRouter);
 app.use("/role", roleRouter);
 app.use("/permission", permissionRouter);
 app.use("/product", productRouter);
+app.use("/product", historyRouter);
 
 
 
