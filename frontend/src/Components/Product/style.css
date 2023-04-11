@@ -1,0 +1,94 @@
+.contaner {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+  border-radius: 5px;
+  border: solid 2px silver;
+  margin: 0 10px;
+  text-align: center;
+  font-weight: bolder;
+  color: white;
+
+}
+
+
+.for__prod{
+    display: flex;
+    height: 10vh;
+    justify-content: space-around;
+    justify-content: center;
+    width:50%;
+    
+    
+}
+table {
+  color: white;
+
+}
+.to__get__prodcut {
+  display: flex;
+  width: 100%;
+}
+.for__all {
+  display: flex;
+  color: white;
+  
+
+  direction: rtl;
+  margin: 6vh 0 0 0;
+}
+.prodcut__price {
+  margin: 1vh 0 0px 0;
+}
+
+.delete-icon {
+  display: flex;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+align-items: center;
+  margin: auto;
+  border: none;
+  border-radius: 50%;
+}
+
+.purchase-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  background-color: #007ad9;
+  color: white;
+  padding: 20px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.purchase-btn:hover {
+  background-color: green;
+}
+.t__head{
+    background-color: #007ad9;
+    color: white;
+}
+
+.sum__table{
+    color: #f4392c;
+    font-weight: bolder;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.t__body{
+    color: white;
+    font-weight: bolder;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}

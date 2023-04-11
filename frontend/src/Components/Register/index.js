@@ -38,43 +38,7 @@ const Register = () => {
         })
     }
 
-    return (
-    //     <>
-    //     <div className="Form2">
-    //         {!isLoggedIn ? (
-    //             <div className="AllForm">
-    //                 <p className="Title">Register:</p>
-    //                 <div className="InputAndButton">
-    //                     <input className="loginInput2"
-    //                         type="text"
-    //                         placeholder="First Name"
-    //                         onChange={(e) => setFirstName(e.target.value)}
-    //                     />
-    //                     <br />
-    //                     <input className="loginInput2"
-    //                         type="email"
-    //                         placeholder="Email"
-    //                         onChange={(e) => setEmail(e.target.value)}
-    //                     />
-    //                     <br />
-    //                     <input className="loginInput2"
-    //                         type="password"
-    //                         placeholder="Password"
-    //                         onChange={(e) => setPassword(e.target.value)}
-    //                     />
-    //                     <br />
-    //                     <button className="buttonlogin2" onClick={() => {
-    //                         registerforuser()
-    //                     }}>Register</button>
-    //                 </div>
-    //                 {status ? message && <div >{message}</div> : message && <div >{message}</div>}
-    //             </div>
-    //         ) : (
-    //             <p>Logout First</p>
-    //         )}
-    //     </div>
-    // </>
-        
+    return (     
         <div className="continer">
             <div className="container">
                 <div className="screen">
@@ -84,9 +48,15 @@ const Register = () => {
                                 <i className="login__icon fas fa-user"></i>
                                 <input type="text" className="login__input" placeholder="Username"
                                     onChange={(e) => setUserName(e.target.value)} />
+                                
+                            </div>
+
+                            <div className="login__field">
+                                <i className="login__icon fas fa-user"></i>
                                 <input type="text" className="login__input" placeholder=" Email"
                                     onChange={(e) => setEmail(e.target.value)} />
                             </div>
+
                             <div className="login__field">
                                 <i className="login__icon fas fa-lock"></i>
                                 <input type="password" className="login__input" placeholder="Password"
