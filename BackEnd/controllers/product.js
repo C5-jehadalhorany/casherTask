@@ -22,7 +22,7 @@ const createProduct = (req, res) => {
 
 
 const GetAllProduct = (req, res) => {
-    const query = `SELECTE * from products;`;
+    const query = `SELECT * from products;`;
     connection.query(query, (err, result) => {
         if (err) {
             return res.status(500).json({
@@ -31,7 +31,7 @@ const GetAllProduct = (req, res) => {
                 err: err,
             });
         }
-        return res.status(201).json({
+        return res.status(200).json({
             success: true,
             massage: "Success ALL product",
             result: result,
