@@ -17,7 +17,7 @@ const Register = () => {
         };
     });
 
-    console.log(isLoggedIn);
+ 
 
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
