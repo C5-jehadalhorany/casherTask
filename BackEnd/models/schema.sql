@@ -21,12 +21,7 @@ CREATE TABLE users(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE permissions(
-    id int auto_increment NOT NULL,
-    permission varchar (255) NOT NULL,
-    is_deleted TINYINT DEFAULT 0,
-    primary key (id)
-);
+
 
 
 CREATE TABLE products (
@@ -37,15 +32,7 @@ CREATE TABLE products (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE roles_permissions(
-    id int auto_increment NOT NULL,
-    permission_id INT,
-    role_id INT,
-    foreign key (role_id) references roles(id),
-    foreign key (permission_id) references permissions(id),
-    is_deleted TINYINT DEFAULT 0,
-    primary key (id)
-);
+
 
 CREATE TABLE history(
     id int auto_increment NOT NULL,

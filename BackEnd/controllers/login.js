@@ -16,8 +16,9 @@ const login = (req, res) => {
                 if (response) {
                     const payload = {
                         userId: result[0].id,
-                        role: result[0].role_id,
+                        role_id: result[0].role_id,
                     };
+                    console.log(result);
                     const secret = process.env.SECRET;
                     const token = jwt.sign(payload, secret);
 
