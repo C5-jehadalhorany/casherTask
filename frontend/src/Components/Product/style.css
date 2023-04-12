@@ -67,6 +67,8 @@ align-items: center;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  font-weight: bolder;
+
 }
 
 .purchase-btn:hover {
@@ -92,3 +94,32 @@ align-items: center;
     text-align: center;
     justify-content: center;
 }
+
+.admin-btn {
+   position: fixed;
+  bottom: 50px;
+  right: 200px;
+  background-color: #007ad9;
+  color: white;
+  padding: 20px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bolder;
+
+}
+
+
+.logout-button2{
+   position: fixed;
+  bottom: 150px;
+  right:40px;
+  background-color: #007ad9;
+  color: white;
+  padding: 20px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+

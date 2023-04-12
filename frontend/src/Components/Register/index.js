@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios"
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/reducers/auth/index"
 import("./style.css");
 
 
 const Register = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate()
-    const { isLoggedIn } = useSelector((state) => {
+
+    const { isLoggedIn, } = useSelector((state) => {
         return {
             isLoggedIn: state.auth.isLoggedIn,
+
         };
     });
+
+    console.log(isLoggedIn);
 
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
@@ -38,9 +44,13 @@ const Register = () => {
         })
     }
 
-    return (     
+    const handleLogout = () => {
+        dispatch(logout());
+    };
+
+    return (
         <div className="continer">
-            <div className="container">
+            {!isLoggedIn ? <> <div className="container">
                 <div className="screen">
                     <div className="screen__content">
                         <div className="login">
@@ -48,7 +58,7 @@ const Register = () => {
                                 <i className="login__icon fas fa-user"></i>
                                 <input type="text" className="login__input" placeholder="Username"
                                     onChange={(e) => setUserName(e.target.value)} />
-                                
+
                             </div>
 
                             <div className="login__field">
@@ -84,7 +94,15 @@ const Register = () => {
                         <span className="screen__background__shape screen__background__shape1"></span>
                     </div>
                 </div>
-            </div>
+            </div></> : <>
+                <div className="logout-container">
+                    <p className="message">You are already logged in!</p>
+                    <button className="logout-button" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </div>
+            </>}
+
         </div>
     );
 };

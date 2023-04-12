@@ -18,15 +18,15 @@ export const authSlice = createSlice({
             state.isLoggedIn = false;
             localStorage.clear();
         },
-        role: (state, action) => {
+        role_id: (state, action) => {
             localStorage.setItem("role", action.payload)
             state.roles = action.payload
-            console.log(action);
         }
     }
 })
 
+export const { login, logout, role_id } = authSlice.actions
 
-export const { login, logout, role } = authSlice.actions
+export const selectToken = state => state.auth.token;
 
 export default authSlice.reducer

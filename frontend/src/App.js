@@ -2,6 +2,7 @@ import Login from './Components/Login';
 import { Route, Routes } from "react-router-dom";
 import Register from './Components/Register';
 import ProductAndHistory from './Components/Product';
+import GetHistory from './Components/History';
 
 function App() {
   
@@ -11,6 +12,8 @@ function App() {
       <Route path={"/register"} element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<ProductAndHistory />} />
+        <Route path="/admin" element={<GetHistory />} />
+
 
     
     </Routes>

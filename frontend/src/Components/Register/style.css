@@ -1,0 +1,23 @@
+.logout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.message {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.logout-button {
+  background-color: #007ad9;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bolder;
+}
